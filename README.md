@@ -1,12 +1,12 @@
 Roman To Decimal
 ================
 
-## Problem description
+## Introduction (Step 0)
 
-Write a function to convert from Roman Numerals to decimal numerals.
+**The main focus of this kata is to write a function to convert from Roman Numerals to Decimal Numerals.**
 
 Roman numerals use combinations of letters from the Latin alphabet to signify values. 
-This is the conversion value table:
+This is the conversion values table:
 
 | Symbol  | Value    |
 | ------- | -------- |
@@ -18,25 +18,23 @@ This is the conversion value table:
 | D       |  500     |
 | M       | 1000     |
 
-Numbers are formed by combining symbols together and adding or substracting their values. 
-Generally, symbols are placed in order of value, 
-starting with the largest ones. 
-When smaller values precede larger values, 
-the smaller values are subtracted from the larger values, 
-and the result is added to the total. 
+
+Numbers are formed by combining symbols together. 
 
 Example:
 
 | Roman Number  | Computation                                    | Value      
 | ------------- | ---------------------------------------------- | ----------
 | MMCCLVI       |   1000 + 1000 + 100 + 100 + 50 + 5 + 1         | 2256 
-| MCMXLIV       |   1000 + (1000 - 100) + (50 - 10) + (5 - 1)    | 1944        
 
 
-## Iterations
+To avoid further complexity in early stages, assume that the number is always valid and forget any issue related to malformed numbers or invalid sequences. 
 
-To avoid unnatural solutions compared to your usual development, we have hidden the iterations in various documents.
+## Steps
 
-* [Iteration 1](doc/Iteration1.md)
-* [Iteration 2](doc/Iteration2.md)
-* [Iteration 3](doc/Iteration3.md)
+To avoid unnatural solutions compared to your usual development, we have hidden the steps in various documents. First solve the problem presented in each document **before to advancing to the next step**.
+
+* [Understanding the domain](doc/domain.md)
+* [Step 1](doc/step1.md)
+* [Step 2](doc/step2.md)
+* [Step 3](doc/step3.md)
