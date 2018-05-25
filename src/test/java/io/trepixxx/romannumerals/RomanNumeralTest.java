@@ -49,10 +49,36 @@ class RomanNumeralTest {
         Assertions.assertEquals(decimalNumeral, romanNumeral.convertToDecimalNumeral());
     }
 
+
+    @Test
+    void givenDecimalNumeralWhichGenerateSubtractiveNotation_CanCreateRomanNumeral() {
+        val romanNumeral = RomanNumeral.from(new DecimalNumeral(1999));
+        val expectedRomanNumeral = new RomanNumeral(M,C,M,X,C,I,X);
+        
+        Assertions.assertEquals(expectedRomanNumeral, romanNumeral);
+    }
+
+    @Test
+    void givenTwoRomanNumerals_CanSumIt() {
+        val firstAddend = new RomanNumeral(C);
+        val secondAddend = new RomanNumeral(M);
+        val expectedSum = new RomanNumeral(M, C);
+
+        Assertions.assertEquals(expectedSum, firstAddend.add(secondAddend));
+    }
+
+    @Test
+    void givenTwoRomanNumeralsWhichGenerateSubtractiveNotationNumeral_CanSumIt() {
+        val firstAddend = new RomanNumeral(D, C, C, C);
+        val secondAddend = new RomanNumeral(C, X);
+        val expectedSum = new RomanNumeral(C, M, X);
+
+        Assertions.assertEquals(expectedSum, firstAddend.add(secondAddend));
+    }
+
     @Test
     @Disabled("Validation on creation is not implemented yet. This is an invalid number using subtractive notation")
     void givenRomanNumeralWithInvalidSubtractiveNotation_ThrowException() {
         new RomanNumeral(I, C);
     }
-
 }

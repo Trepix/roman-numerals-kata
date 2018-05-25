@@ -1,6 +1,7 @@
 package io.trepixxx.romannumerals;
 
 import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,6 +12,7 @@ import java.util.stream.Stream;
 
 class DecimalNumeralTest {
 
+    @ToString
     @RequiredArgsConstructor
     static class Tuple {
         final Integer first;

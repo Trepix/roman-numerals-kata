@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 
 @EqualsAndHashCode
 @RequiredArgsConstructor
-class DecimalNumeral {
+class DecimalNumeral implements Comparable<DecimalNumeral> {
 
     private final Integer value;
 
@@ -17,11 +17,16 @@ class DecimalNumeral {
         return this.value < decimalNumeral.value;
     }
 
-    DecimalNumeral add(DecimalNumeral decimalNumeral) {
-        return new DecimalNumeral(this.value + decimalNumeral.value);
+    DecimalNumeral add(DecimalNumeral decimalNumber) {
+        return new DecimalNumeral(this.value + decimalNumber.value);
     }
 
-    DecimalNumeral subtract(DecimalNumeral decimalNumeral) {
-        return new DecimalNumeral(this.value - decimalNumeral.value);
+    DecimalNumeral subtract(DecimalNumeral decimalNumber) {
+        return new DecimalNumeral(this.value - decimalNumber.value);
+    }
+
+    @Override
+    public int compareTo(DecimalNumeral o) {
+        return this.value.compareTo(o.value);
     }
 }
